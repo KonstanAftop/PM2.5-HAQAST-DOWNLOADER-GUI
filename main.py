@@ -3,17 +3,18 @@ from downloader import download_func
 
 window=tk.Tk()
 window.title("PM2.5 HAQAST GUI")
-window.minsize(800, 600)  # Minimum width: 300px, height: 200px
-window.maxsize(4000, 3000)  # Maximum width: 800px, height: 600px
+window.minsize(400, 300)  # Minimum width: 300px, height: 200px
+window.maxsize(800, 600)  # Maximum width: 800px, height: 600px
 
 
-header=tk.Label(window, text="Welcome to PM2.5 HAQAST Downloader GUI", font=("Arial", 18)).grid(row=0,column=1)
+header=tk.Label(window, text="MERRA-2 PM2.5 HAQAST DATA DOWNLOADER", font=("Arial", 18))
+header.grid(row=0,column=1)
 
 
 
 
-day_label=tk.Label(window, text='Masukkan hari ')
-day_label.grid(row=1,column=0)
+day_label=tk.Label(window, text='Masukkan hari')
+day_label.grid(row=1,column=0, columnspan=1)
 day=tk.Entry(window, width=10)
 day.grid(row=1,column=2)
 
