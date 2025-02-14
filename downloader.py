@@ -1,11 +1,12 @@
 import requests
 
-def download_func(d, m, y):
+def download_func(d, m, y, lon0, lon1, lat0, lat1):
     # Format tanggal
+    print(lon0,lon1,lat0,lat1)
     date_str = f"{y}{m:02d}{d:02d}"  # Pastikan bulan dan hari memiliki dua digit
 
     # Url data yang akan didownload 
-    url = f"https://acdisc.gesdisc.eosdis.nasa.gov/opendap/HAQAST/MERRA2_CNN_HAQAST_PM25.1/{y}/MERRA2_HAQAST_CNN_L4_V1.{date_str}.nc4.dap.nc?dap4.ce=/lat[135:1:150];/lon[180:1:275];/time[0:1:23];/MERRA2_CNN_Surface_PM25[0:1:23][135:1:150][180:1:275]"
+    url = f"https://acdisc.gesdisc.eosdis.nasa.gov/opendap/HAQAST/MERRA2_CNN_HAQAST_PM25.1/{y}/MERRA2_HAQAST_CNN_L4_V1.{date_str}.nc4.dap.nc?dap4.ce=/lat[{lat0}:1:{lat1}];/lon[{lon0}:1:{lon1}];/time[0:1:23];/MERRA2_CNN_Surface_PM25[0:1:23][{lat0}:1:{lat1}][{lon0}:1:{lon1}]"
 
     # Nama file keluaran
     filename = f"MERRA2_PM25_{date_str}.nc"
