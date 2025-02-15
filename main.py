@@ -14,18 +14,17 @@ header.grid(row=0, column=1)
 
 def download():
     start=str(startdate.get())
-    end=str(startdate.get())
+    end=str(enddate.get())
     lon_0, lon_1, lat_0, lat_1 = lon_converter_to_idx(int(lon_init.get())), lon_converter_to_idx(int(lon_end.get())), lat_converter_to_idx(int(lat_init.get())), lat_converter_to_idx(int(lat_end.get()))
     download_func(start,lon_0,lon_1,lat_0,lat_1,end)
 
 
-
-startdate_label=tk.Label(window, text='Masukkan waktu awal (DDMMYYYY)')
+startdate_label=tk.Label(window, text='Masukkan waktu awal (YYYYMMDD)')
 startdate_label.grid(row=1,column=0, columnspan=1)
 startdate=tk.Entry(window, width=10)
 startdate.grid(row=1,column=1)
 
-enddate_label=tk.Label(window, text='Masukkan waktu akhir (DDMMYYYY)')
+enddate_label=tk.Label(window, text='Masukkan waktu akhir (YYYYMMDD)')
 enddate_label.grid(row=2,column=0)
 enddate=tk.Entry(window, width=10)
 enddate.grid(row=2,column=1)
@@ -36,7 +35,6 @@ lon_init=tk.Entry(window, width=10)
 lon_init.grid(row=3,column=1, columnspan=1)
 lon_end=tk.Entry(window, width=10)
 lon_end.grid(row=3,column=2, columnspan=1)
-
 
 
 lat_label=tk.Label(window, text='Masukkan latitude area (AWAL/AKHIR)')
